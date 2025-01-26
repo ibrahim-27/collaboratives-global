@@ -1,4 +1,4 @@
-import { useRef, useEffect } from "react";
+import { useRef, useEffect, useState } from "react";
 import dwpLogo from "../assets/dwp-logo.jpg";
 import jotunLogo from "../assets/jotun-logo.png";
 import yumLogo from "../assets/yum-logo.jpg";
@@ -26,7 +26,7 @@ const projects = [
   {
     title: "Yum",
     description:
-      "Yum! Brands is focused on building KFC, Pizza Hut, Taco Bell and The Habit Burger Grill to be the world’s most loved, trusted and fastest growing restaurant brands.",
+      "Yum! Brands is focused on building KFC, Pizza Hut, Taco Bell and The Habit Burger Grill to be the world's most loved, trusted and fastest growing restaurant brands.",
     img: yumLogo,
   },
   {
@@ -75,12 +75,13 @@ const projects = [
 
 const Projects = () => {
   const scrollRef = useRef(null);
+  const [isPaused, setIsPaused] = useState(false);
 
   useEffect(() => {
     const scrollContainer = scrollRef.current;
 
     const scroll = () => {
-      if (scrollContainer) {
+      if (scrollContainer && !isPaused) {
         if (scrollContainer.scrollLeft >= scrollContainer.scrollWidth / 2) {
           scrollContainer.scrollLeft = 0; // Reset to start for seamless loop
         }
@@ -91,16 +92,21 @@ const Projects = () => {
     const interval = setInterval(scroll, 20); // Adjust speed
 
     return () => clearInterval(interval);
-  }, []);
+  }, [isPaused]);
 
   return (
     <div className="flex flex-col gap-6">
-      <h1 className="text-3xl font-bold text-center">Projects</h1>
-      <div ref={scrollRef} className="overflow-x-hidden whitespace-nowrap py-4">
+      <h1 className="text-3xl font-bold text-center">Our Clients</h1>
+      <div 
+        ref={scrollRef} 
+        className="overflow-x-hidden whitespace-nowrap py-4"
+        onMouseEnter={() => setIsPaused(true)}
+        onMouseLeave={() => setIsPaused(false)}
+      >
         <div className="inline-flex gap-12">
           {[...projects, ...projects].map((project, index) => (
             <div key={index} className="flex-shrink-0">
-                <img className="w-24 h-24" src={project.img} alt={project.title} />
+              <img className="w-fit h-32" src={project.img} alt={project.title} />
             </div>
           ))}
         </div>

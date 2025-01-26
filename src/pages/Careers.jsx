@@ -35,6 +35,8 @@ const Careers = () => {
       <PageTitle
         title="Join Our Team"
         description="Explore career opportunities and become a part of our dynamic team."
+        bgImg="bg-careers"
+        bgPosition="60% 40%"
       />
       <div className="flex flex-col gap-4">
         {cards.map((card, index) => (

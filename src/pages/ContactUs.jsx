@@ -40,6 +40,13 @@ const offices = [
     position: [39.5501, -105.7821],
   },
   {
+    country: "Toronto, Canada",
+    phone: "+14090078601",
+    email: "canada@example.com",
+    address: "1617 George Street, Toronto, Canada",
+    position: [43.6532, -79.3832],
+  },
+  {
     country: "Sydney, Australia",
     phone: "+61090078601",
     email: "australia@example.com",
@@ -55,7 +62,11 @@ const ContactUs = () => {
         title="Get in Touch"
         description="We would love to hear from you. Please reach out to us through any of
           the following offices."
+        bgImg="bg-contact"
+        bgPosition="60% 40%"
       />
+      
+      <div className="p-4 md:px-8 flex flex-col gap-4">
       <ContactUsForm />
       <div className="flex flex-col gap-4">
         <h3 className="text-2xl font-bold">Our Offices</h3>
@@ -67,6 +78,7 @@ const ContactUs = () => {
       </div>
       <WorldMap office={offices} />
     </div>
+      </div>
   );
 };
 

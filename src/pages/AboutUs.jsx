@@ -41,7 +41,10 @@ const AboutUs = () => {
           Collaboratives Global – we’re not just subject
           specialist, we’re more than your consultants, we’re your
           Transformation Partners!"
+          bgImg="bg-about"
+          bgPosition="80% 20%"
       />
+      <div className="my-8 px-8">
       <div className="grid md:grid-cols-3 gap-4 items-center justify-center">
         {keypoints.map((keypoint, index) => (
           <AboutUsCard
@@ -53,6 +56,7 @@ const AboutUs = () => {
       </div>
       <Team />
       <Projects />
+      </div>
     </>
   );
 };

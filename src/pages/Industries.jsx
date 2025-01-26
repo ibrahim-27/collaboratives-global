@@ -70,17 +70,18 @@ const Industries = () => {
   return (
     <div className="flex flex-col">
       <PageTitle
-        title="Industries & Professions We Serve"
+        title="Collaboratives' Domains"
         description="Collaboratives Global offers tailored services across various industries, helping businesses grow and thrive."
       />
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div className="my-8 px-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {industries.map((industry, index) => (
           <div
             key={index}
-            className="bg-white shadow-md rounded-lg p-6 flex flex-col items-center gap-2 border hover:border-secondary-light"
+            className="bg-white shadow-md rounded-lg p-6 flex flex-col items-center gap-2 border 
+            hover:shadow-lg hover:shadow-primary-light transition-all duration-300 transform hover:-translate-y-1"
           >
             <img className="w-12 h-12" src={industry.icon} alt="" />
-            <h2 className="text-2xl font-bold text-gray-800">
+            <h2 className="text-center text-2xl font-bold text-gray-800">
               {industry.title}
             </h2>
             <p className="text-text-secondary text-center">

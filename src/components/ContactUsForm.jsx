@@ -32,7 +32,7 @@ const ContactUsForm = () => {
     return (
         <div>
         <h3 className='text-2xl font-bold text-center'>Contact Us</h3>
-        <form onSubmit={handleSubmit} className="w-1/2 mx-auto flex flex-col gap-6 p-6 bg-white shadow-md rounded-lg">
+        <form onSubmit={handleSubmit} className="w-full md:w-3/4 lg:w-1/2 mx-auto flex flex-col gap-6 p-6 bg-white shadow-md rounded-lg">
             <div className="">
                 <label htmlFor="name" className="block text-gray-700 font-bold mb-2">Name:</label>
                 <input

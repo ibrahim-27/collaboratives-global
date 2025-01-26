@@ -1,5 +1,6 @@
 {
   "name": "collaboratives-global",
+  "homepage": "https://collaborativesglobal.com/",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -13,6 +14,8 @@
     "leaflet": "^1.9.4",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
+    "react-icons": "^5.4.0",
+    "react-intersection-observer": "^9.15.0",
     "react-leaflet": "^4.1.0",
     "react-router-dom": "^7.1.1"
   },
