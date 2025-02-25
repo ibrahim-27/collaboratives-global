@@ -2,8 +2,9 @@ import React, { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import ServicesCard from "../components/ServicesCard";
 
-import complianceBanner from "../assets/compliance-banner.webp";
-import riskBanner from "../assets/risk-banner.webp";
+import complianceBanner from "../assets/compliance-banner.png";
+import riskBanner from "../assets/risk-banner.jpg";
+import itBanner from "../assets/it-banner.png";
 import PageTitle from "../components/PageTitle";
 
 import {
@@ -37,46 +38,64 @@ import {
 const services = [
   {
     title: "Financial Management",
-    description:
-      "Offering comprehensive financial solutions to optimize business performance.",
+    description: "Offering comprehensive financial solutions to optimize business performance.",
     icon: complianceBanner,
     subServices: [
       {
         title: "Virtual CFO Services",
-        description:
-          "Professional CFO services for financial planning, strategy, and decision-making. This includes budgeting, forecasting, financial analysis, and strategic financial planning to help businesses make informed decisions.",
+        description: [
+          "Strategic financial planning and analysis",
+          "Budgeting and forecasting",
+          "Financial decision-making support",
+          "Performance monitoring"
+        ],
         icon: FaChartLine,
       },
       {
         title: "Financial Accounting and Reporting",
-        description:
-          "Accurate and compliant financial accounting and reporting for your business. This involves preparing financial statements, maintaining accurate financial records, and ensuring compliance with accounting standards and regulations.",
+        description: [
+          "Financial statement preparation",
+          "Regulatory compliance",
+          "Accounting records maintenance",
+          "Financial reporting"
+        ],
         icon: FaBook,
       },
     ],
   },
   {
     title: "Assurance and Compliance",
-    description:
-      "Ensuring compliance and accountability through reliable audits and due diligence.",
+    description: "Ensuring compliance and accountability through reliable audits and due diligence.",
     icon: complianceBanner,
     subServices: [
       {
         title: "External Audit",
-        description:
-          "Independent assessment of financial statements for credibility and compliance. External audits provide an objective evaluation of a company's financial health and ensure that financial statements are free from material misstatement.",
+        description: [
+          "Independent financial assessment",
+          "Compliance verification",
+          "Risk evaluation",
+          "Audit reporting"
+        ],
         icon: FaClipboardCheck,
       },
       {
         title: "Financial Due Diligence",
-        description:
-          "Thorough analysis to support informed financial decisions and investments. This process involves evaluating the financial aspects of a business to identify potential risks and opportunities before making investment decisions.",
+        description: [
+          "Financial health assessment",
+          "Risk identification",
+          "Investment opportunity analysis",
+          "Strategic recommendations"
+        ],
         icon: FaSearchDollar,
       },
       {
         title: "Feasibilities",
-        description:
-          "Detailed feasibility studies for evaluating the viability of projects and initiatives. These studies assess the practicality and potential success of proposed projects, considering factors such as cost, benefits, risks, and market conditions.",
+        description: [
+          "Project viability assessment",
+          "Cost-benefit analysis",
+          "Market condition evaluation",
+          "Risk assessment"
+        ],
         icon: FaProjectDiagram,
       },
     ],
@@ -88,20 +107,32 @@ const services = [
     subServices: [
       {
         title: "Internal Audit",
-        description:
-          "Ensuring effective internal controls and operational efficiency. Internal audits evaluate the effectiveness of a company's internal controls, risk management, and governance processes to ensure they are functioning as intended.",
+        description: [
+          "Internal controls evaluation",
+          "Operational efficiency review",
+          "Risk management assessment",
+          "Governance process review"
+        ],
         icon: FaUserShield,
       },
       {
         title: "Management Audit",
-        description:
-          "Evaluation of management practices to align with strategic goals. This involves assessing the efficiency and effectiveness of management practices and ensuring they are aligned with the organization's strategic objectives.",
+        description: [
+          "Management practices evaluation",
+          "Strategic alignment assessment",
+          "Efficiency analysis",
+          "Performance review"
+        ],
         icon: FaUsersCog,
       },
       {
         title: "Internal Controls Systems",
-        description:
-          "Designing and implementing robust internal control systems. These systems help safeguard assets, ensure the accuracy of financial records, and promote operational efficiency by preventing and detecting errors and fraud.",
+        description: [
+          "Control system design",
+          "Asset protection measures",
+          "Financial accuracy assurance",
+          "Fraud prevention protocols"
+        ],
         icon: FaShieldAlt,
       },
     ],
@@ -113,58 +144,89 @@ const services = [
     subServices: [
       {
         title: "Standard Operating Procedures",
-        description:
-          "Developing SOPs to enhance consistency and efficiency. Standard Operating Procedures (SOPs) provide detailed, written instructions to achieve uniformity in the performance of specific functions.",
+        description: [
+          "SOP development",
+          "Process standardization",
+          "Efficiency enhancement",
+          "Quality control measures"
+        ],
         icon: FaClipboardCheck,
       },
       {
         title: "Operational Manuals",
-        description:
-          "Comprehensive guides for standardized operational practices. These manuals serve as reference documents that outline the procedures and standards for various operational activities within an organization.",
+        description: [
+          "Procedure documentation",
+          "Standard guidelines creation",
+          "Best practices compilation",
+          "Training material development"
+        ],
         icon: FaBook,
       },
       {
         title: "Business Process Reengineering",
-        description:
-          "Revolutionizing processes for improved performance and results. This involves analyzing and redesigning workflows and processes within an organization to optimize performance and achieve significant improvements in critical measures such as cost, quality, and speed.",
+        description: [
+          "Process analysis and redesign",
+          "Workflow optimization",
+          "Performance improvement",
+          "Cost reduction strategies"
+        ],
         icon: FaTools,
       },
       {
         title: "Business Process Outsourcing",
-        description:
-          "Cost-effective outsourcing solutions for key business processes. BPO involves contracting specific business tasks, such as payroll, human resources, or customer service, to a third-party service provider to reduce costs and improve efficiency.",
+        description: [
+          "Process outsourcing solutions",
+          "Cost optimization",
+          "Efficiency improvement",
+          "Resource optimization"
+        ],
         icon: FaExchangeAlt,
       },
     ],
   },
   {
     title: "Financial-Operational Management",
-    description:
-      "Improving financial and operational performance for business success.",
+    description: "Improving financial and operational performance for business success.",
     icon: complianceBanner,
     subServices: [
       {
         title: "Supply Chain Management",
-        description:
-          "Optimizing supply chains for enhanced efficiency and cost savings. This involves managing the flow of goods and services, including all processes that transform raw materials into final products, to maximize efficiency and minimize costs.",
+        description: [
+          "Supply chain optimization",
+          "Inventory management",
+          "Cost reduction strategies",
+          "Process efficiency"
+        ],
         icon: FaBoxes,
       },
       {
         title: "Fixed Assets Management",
-        description:
-          "Effective tracking and management of fixed assets. This includes maintaining accurate records of a company's fixed assets, such as property, plant, and equipment, to ensure proper accounting, maintenance, and utilization.",
+        description: [
+          "Asset tracking",
+          "Maintenance planning",
+          "Depreciation management",
+          "Asset utilization optimization"
+        ],
         icon: FaWarehouse,
       },
       {
         title: "Working Capital Management",
-        description:
-          "Strategies to maintain adequate liquidity and operational funding. This involves managing the company's short-term assets and liabilities to ensure it has sufficient cash flow to meet its short-term obligations and operating expenses.",
+        description: [
+          "Cash flow optimization",
+          "Liquidity management",
+          "Working capital efficiency",
+          "Financial planning"
+        ],
         icon: FaMoneyBillWave,
       },
       {
         title: "Channel and Retail Sales Management",
-        description:
-            "Enhancing retail and channel sales performance. This includes developing strategies to improve sales performance through various distribution channels and retail outlets, ensuring products reach the end customers effectively.",
+        description: [
+          "Sales strategy development",
+          "Channel optimization",
+          "Performance monitoring",
+          "Distribution management"
+        ],
         icon: FaStore,
       },
     ],
@@ -176,80 +238,113 @@ const services = [
     subServices: [
       {
         title: "Financial Functional Consultancy",
-        description:
-          "Expert financial advice for ERP implementations. This involves providing specialized financial expertise to ensure the successful implementation and optimization of ERP systems, aligning them with the company's financial processes and goals.",
+        description: [
+          "ERP financial implementation",
+          "Process optimization",
+          "System integration",
+          "Financial module setup"
+        ],
         icon: FaDatabase,
       },
       {
         title: "Solution Architectural Consultancy",
-        description:
-          "Customized ERP solutions to align with organizational goals. This includes designing and implementing ERP solutions that are tailored to the specific needs and objectives of the organization, ensuring seamless integration and functionality.",
+        description: [
+          "ERP architecture design",
+          "System customization",
+          "Integration planning",
+          "Technical optimization"
+        ],
         icon: FaCubes,
       },
       {
         title: "Functional Consultancy",
-        description:
-          "Specialized guidance for proprietary ERPs like SAP, Oracle, and MS Dynamics 365. This involves providing expert advice and support for the implementation, customization, and optimization of specific ERP systems to enhance their effectiveness and efficiency.",
+        description: [
+          "SAP implementation",
+          "Oracle optimization",
+          "MS Dynamics setup",
+          "System customization"
+        ],
         icon: FaLaptopCode,
       },
     ],
   },
   {
     title: "Taxation",
-    description:
-      "Expert taxation services to ensure compliance and optimize your tax strategy.",
+    description: "Expert taxation services to ensure compliance and optimize your tax strategy.",
     icon: complianceBanner,
     subServices: [
       {
         title: "VAT",
-        description:
-          "Comprehensive VAT compliance and advisory services. This includes helping businesses comply with VAT regulations, preparing and filing VAT returns, and providing advice on VAT planning and optimization.",
+        description: [
+          "VAT compliance management",
+          "Return preparation",
+          "Advisory services",
+          "Planning strategies"
+        ],
         icon: FaPercent,
       },
       {
         title: "Corporate Taxation",
-        description:
-          "Tailored solutions for corporate tax management. This involves providing expert advice on corporate tax matters, including tax planning, compliance, and optimization strategies to minimize tax liabilities and ensure compliance with tax laws.",
+        description: [
+          "Tax planning and strategy",
+          "Compliance management",
+          "Risk assessment",
+          "Advisory services"
+        ],
         icon: FaBuilding,
       },
     ],
   },
   {
     title: "Information Technology",
-    description:
-      "Driving innovation through expert IT services and governance.",
-    icon: complianceBanner,
+    description: "Driving innovation through expert IT services and governance.",
+    icon: itBanner,
     subServices: [
       {
         title: "IT Audits",
-        description:
-          "Ensuring IT systems and processes meet industry standards. IT audits involve evaluating the effectiveness and security of an organization's information systems, ensuring they comply with industry standards and best practices.",
+        description: [
+          "System evaluation",
+          "Security assessment",
+          "Compliance verification",
+          "Process improvement"
+        ],
         icon: FaDesktop,
       },
       {
         title: "Others",
-        description:
-          "Custom IT solutions for unique business challenges. This includes providing tailored IT services and solutions to address specific business needs and challenges, ensuring the effective use of technology to achieve business objectives.",
+        description: [
+          "Custom IT solutions",
+          "Technology consulting",
+          "System optimization",
+          "Digital transformation"
+        ],
         icon: FaCog,
       },
     ],
   },
   {
     title: "Corporate Governance",
-    description:
-      "Implementing governance frameworks for ethical and effective management.",
+    description: "Implementing governance frameworks for ethical and effective management.",
     icon: riskBanner,
     subServices: [
       {
         title: "Corporate Governance",
-        description:
-          "Implementing governance frameworks for ethical and effective management.",
+        description: [
+          "Governance framework design",
+          "Policy development",
+          "Board advisory",
+          "Best practices implementation"
+        ],
         icon: FaHandshake,
       },
       {
         title: "Compliance and Ethics",
-        description:
-          "Ensuring compliance with laws and regulations and promoting ethical behavior.",
+        description: [
+          "Regulatory compliance",
+          "Ethics program development",
+          "Risk management",
+          "Training and awareness"
+        ],
         icon: FaShieldAlt,
       },
     ],

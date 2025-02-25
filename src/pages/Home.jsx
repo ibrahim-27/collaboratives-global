@@ -9,7 +9,7 @@ import ContactUsForm from '../components/ContactUsForm';
 const Home = () => {
 
     return (
-        <div className='px-8 my-8'>
+        <div className=''>
             {/* <Navbar /> */}
             <Hero />
             <KeyHighLights />

@@ -13,19 +13,13 @@ const ServicesCard = ({ index, title, description, icon, subServices }) => {
     <div
       ref={ref}
       id={title.toLowerCase().replace(/\s+/g, "-")}
-      className={`h-fit grid grid-cols-1 gap-y-8 md:grid-cols-3 md:gap-x-8 py-8 px-4 md:px-8 ${
+      className={`h-fit w-full grid grid-cols-1 gap-y-8 md:grid-cols-3 md:gap-x-8 py-8 px-4 md:px-8 ${
         isEven ? "bg-primary" : "bg-white"
       } 
-            ${
-              inView
-                ? isEven
-                  ? "animate-slide-in-left"
-                  : "animate-slide-in-right"
-                : "opacity-0"
-            }`}
+      ${inView ? "animate-fade-scale-in" : "opacity-0"}`}
     >
       <div
-        className={`h-4/5 w-full flex justify-center items-center m-auto ${
+        className={`h-full w-full flex justify-center items-center m-auto ${
           index % 2 === 1 ? "md:order-2" : ""
         }`}
       >
@@ -68,13 +62,15 @@ const ServicesCard = ({ index, title, description, icon, subServices }) => {
                       }`}
                     />
                   </div>
-                  <div className="px-4">
+                  <div className="px-4 w-full">
                     <h5 className="text-xl font-medium italic">
                       {subService.title}
                     </h5>
-                    <p className={`${isEven ? "text-gray-300" : "text-gray-400"}`}>
-                      {subService.description}
-                    </p>
+                    <ul className={`list-disc list-inside mt-2 ${isEven ? "text-gray-300" : "text-gray-400"}`}>
+                      {subService.description.map((item, idx) => (
+                        <li key={idx} className="text-sm">{item}</li>
+                      ))}
+                    </ul>
                   </div>
                 </li>
               ))}

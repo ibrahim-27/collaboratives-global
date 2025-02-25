@@ -3,6 +3,7 @@ import PageTitle from "../components/PageTitle";
 import Team from "../components/Team";
 import Projects from "../components/Projects";
 import AboutUsCard from "../components/AboutUsCard";
+import ApproachSection from "../components/ApproachSection";
 
 const keypoints = [
   {
