@@ -1,41 +1,54 @@
 import { FaArrowRight, FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import { useState, useEffect, useRef } from "react";
+import { Link } from "react-router-dom";
 
 const Hero = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [transitioning, setTransitioning] = useState(false);
+  
   const banners = [
     {
       image: 'bg-hero1',
-      title: 'Collaboratives Global:',
+      title: 'Collaboratives Global',
+      subtitle: 'Excellence in Financial Management',
       description: 'Specializing in Financial Management, Risk Advisory, IT Governance, and more for over a decade.',
       buttonText: 'Get Consultancy',
+      link: '/contact-us'
     },
     {
       image: 'bg-hero2',
-      title: 'Virtual CFO',
-      description: 'Equivalent dedicated professional services – Substantial HR Cost Saving. Research studies have guaranteed cost reduction of PKR 6M annually with virtual and fractional CFO arrangements.',
+      title: 'Virtual CFO Services',
+      subtitle: 'Strategic Financial Leadership',
+      description: 'Equivalent dedicated professional services with substantial HR cost saving. Guaranteed cost reduction of PKR 6M annually.',
       buttonText: 'Learn More',
+      link: '/services'
     },
     {
       image: 'bg-hero3',
-      title: 'ERP functional Consultancy',
-      description: 'Professional and Practical – Financial Functional Consultancy. It’s ALL – Your customized ERP Project’s success',
+      title: 'ERP Consultancy',
+      subtitle: 'Digital Transformation',
+      description: 'Professional and Practical Financial Functional Consultancy. Ensuring your customized ERP Project’s success.',
       buttonText: 'Explore ERP',
+      link: '/services'
     },
     {
       image: 'bg-hero4',
-      title: 'Business Processes Management',
-      description: 'BPM is the NEXT LEVEL BPR. Effectual Business Process Management with Cost, HR and Integration',
+      title: 'Business Process Management',
+      subtitle: 'Optimization & Efficiency',
+      description: 'BPM is the NEXT LEVEL BPR. Effectual Business Process Management with Cost, HR and Integration.',
       buttonText: 'Discover BPM',
+      link: '/services'
     },
     {
       image: 'bg-hero5',
-      title: 'Assurance and Risk Advisory',
-      description: 'Strengthen your business resilience with comprehensive assurance and risk advisory services, safeguarding your assets and ensuring regulatory compliance.',
+      title: 'Assurance & Risk Advisory',
+      subtitle: 'Secure Your Future',
+      description: 'Strengthen your business resilience with comprehensive assurance and risk advisory services.',
       buttonText: 'View Risk Advisory',
+      link: '/services'
     },
   ];
+  
   const intervalRef = useRef(null);
 
   const nextImage = () => {
@@ -57,12 +70,16 @@ const Hero = () => {
   };
 
   useEffect(() => {
-    intervalRef.current = setInterval(() => {
-      nextImage();
-    }, 5000);
-
+    startSlideShow();
     return () => clearInterval(intervalRef.current);
   }, []);
+
+  const startSlideShow = () => {
+    if (intervalRef.current) clearInterval(intervalRef.current);
+    intervalRef.current = setInterval(() => {
+      nextImage();
+    }, 6000);
+  };
 
   const handleButtonClick = (index) => {
     clearInterval(intervalRef.current);
@@ -70,66 +87,72 @@ const Hero = () => {
     setTimeout(() => {
       setCurrentImageIndex(index);
       setTransitioning(false);
-      intervalRef.current = setInterval(() => {
-        nextImage();
-      }, 5000);
+      startSlideShow();
     }, 500);
   };
 
   return (
-    <div className="relative w-full h-[300px] sm:h-[350px] lg:h-[400px] mx-auto overflow-hidden">
+    <div className="relative w-full h-[600px] lg:h-[700px] overflow-hidden bg-gray-900">
+      {/* Background Image with Overlay */}
       <div
-        className={`absolute inset-0 ${
-          banners[currentImageIndex].image
-        } bg-no-repeat bg-cover bg-center transition-opacity duration-500 ${
-          transitioning ? 'opacity-100' : 'opacity-100'
-        }`}
-        
+        className={`absolute inset-0 bg-cover bg-center transition-all duration-700 ease-in-out transform ${
+          transitioning ? 'scale-105 opacity-80' : 'scale-100 opacity-100'
+        } ${banners[currentImageIndex].image}`}
       >
-        <div className="absolute inset-0 bg-black bg-opacity-30"></div>
-      </div>
-      <div className="relative z-10 p-6 flex flex-col gap-4 justify-end h-full">
-        <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white">
-          {banners[currentImageIndex].title}
-        </h1>
-        <p className="text-sm sm:text-lg lg:text-2xl text-white">
-          {banners[currentImageIndex].description}
-        </p>
-        <button
-          className="w-36 sm:w-48 bg-secondary text-white py-1.5 sm:py-2 px-3 sm:px-4 rounded-lg hover:bg-primary flex items-center justify-center gap-2 transition-all duration-300 text-sm sm:text-base"
-        >
-          {banners[currentImageIndex].buttonText} <FaArrowRight />
-        </button>
+        <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-transparent"></div>
       </div>
 
-      {/* Navigation Buttons */}
-      <div className="absolute top-1/2 transform -translate-y-1/2 left-4 z-20">
-        <button
-          onClick={prevImage}
-          className="bg-gray-800 bg-opacity-50 text-white p-2 rounded-full hover:bg-opacity-70"
-        >
-          <FaChevronLeft />
-        </button>
-      </div>
-      <div className="absolute top-1/2 transform -translate-y-1/2 right-4 z-20">
-        <button
-          onClick={nextImage}
-          className="bg-gray-800 bg-opacity-50 text-white p-2 rounded-full hover:bg-opacity-70"
-        >
-          <FaChevronRight />
-        </button>
+      {/* Content */}
+      <div className="relative z-10 container mx-auto px-4 md:px-8 lg:px-12 h-full flex flex-col justify-center">
+        <div className="max-w-3xl space-y-6 animate-fade-scale-in">
+          <span className="inline-block py-1 px-3 rounded-full bg-secondary/20 text-secondary border border-secondary/30 text-sm font-semibold tracking-wide uppercase mb-2">
+            {banners[currentImageIndex].subtitle}
+          </span>
+          
+          <h1 className="text-4xl md:text-5xl lg:text-7xl font-display font-bold text-white leading-tight">
+            {banners[currentImageIndex].title}
+          </h1>
+          
+          <p className="text-lg md:text-xl text-gray-200 max-w-2xl leading-relaxed">
+            {banners[currentImageIndex].description}
+          </p>
+          
+          <div className="pt-4">
+            <Link
+              to={banners[currentImageIndex].link}
+              className="inline-flex items-center gap-2 bg-secondary hover:bg-secondary-light text-white px-8 py-4 rounded-full font-semibold transition-all shadow-lg hover:shadow-secondary/50 hover:-translate-y-1"
+            >
+              {banners[currentImageIndex].buttonText} <FaArrowRight />
+            </Link>
+          </div>
+        </div>
       </div>
 
-      {/* Banner Indicators */}
-      <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 z-20 flex gap-2">
+      {/* Navigation Arrows */}
+      <button
+        onClick={() => { prevImage(); startSlideShow(); }}
+        className="absolute top-1/2 left-4 md:left-8 transform -translate-y-1/2 z-20 bg-white/10 hover:bg-white/20 text-white p-4 rounded-full backdrop-blur-sm transition-all group"
+      >
+        <FaChevronLeft className="group-hover:-translate-x-1 transition-transform" />
+      </button>
+      
+      <button
+        onClick={() => { nextImage(); startSlideShow(); }}
+        className="absolute top-1/2 right-4 md:right-8 transform -translate-y-1/2 z-20 bg-white/10 hover:bg-white/20 text-white p-4 rounded-full backdrop-blur-sm transition-all group"
+      >
+        <FaChevronRight className="group-hover:translate-x-1 transition-transform" />
+      </button>
+
+      {/* Indicators */}
+      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20 flex gap-3">
         {banners.map((_, index) => (
           <button
             key={index}
             onClick={() => handleButtonClick(index)}
-            className={`w-3 h-3 rounded-full ${
-              currentImageIndex === index ? 'bg-white' : 'bg-gray-500'
+            className={`h-1.5 rounded-full transition-all duration-300 ${
+              currentImageIndex === index ? 'w-8 bg-secondary' : 'w-2 bg-white/50 hover:bg-white'
             }`}
-          ></button>
+          />
         ))}
       </div>
     </div>

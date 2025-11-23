@@ -1,22 +1,19 @@
 import React from 'react';
-import Navbar from '../components/Navbar';
 import Hero from '../components/Hero';
 import KeyHighLights from '../components/KeyHighlights';
 import ServicesOverview from '../components/ServicesOverview';
-import Footer from '../components/Footer';
 import ContactUsForm from '../components/ContactUsForm';
+import Projects from '../components/Projects';
 
 const Home = () => {
-
     return (
-        <div className=''>
-            {/* <Navbar /> */}
+        <main className="flex flex-col w-full">
             <Hero />
             <KeyHighLights />
             <ServicesOverview />
+            <Projects />
             <ContactUsForm />
-            {/* <Footer /> */}
-        </div>
+        </main>
     )
 }
 

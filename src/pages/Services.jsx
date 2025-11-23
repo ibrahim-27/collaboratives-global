@@ -375,7 +375,7 @@ const Services = () => {
         description="We provide a wide range of services to help you with your business needs. Our services include financial accounting & reporting, financial management, virtual CFO services, optimization and standardization, financial functional services, and IT governance."
         bgImg="bg-services"
       />
-      <div className="h-full flex flex-wrap justify-center gap-4">
+      <div className="flex flex-col">
         {services.map((service, index) => (
           <ServicesCard key={index} index={index} {...service} />
         ))}

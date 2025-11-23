@@ -6,79 +6,83 @@ import WorldMap from "../components/WorldMap";
 const offices = [
   {
     country: "Lahore, Pakistan",
-    phone: "+92090078601",
-    email: "pakistan@example.com",
-    address: "1234 North Main Street, Karachi, Pakistan",
+    phone: "+923008477546",
+    email: "asim.nazir@collaborativesglobal.com",
+    address: "27 NICHS Lahore, Pakistan",
     position: [31.5204, 74.3587],
   },
   {
-    country: "Dubai, UAE",
-    phone: "+97190078601",
-    email: "uae@example.com",
-    address: "5678 Sheikh Zayed Road, Dubai, UAE",
+    country: "Ajman, UAE",
+    phone: "+971585470045",
+    email: "info@collaborativesglobal.com",
+    address: "Ajman Free Zone Ajman, UAE",
     position: [25.2048, 55.2708],
   },
   {
     country: "Frankfurt, Germany",
-    phone: "+49090078601",
-    email: "germany@example.com",
-    address: "91011 Hauptstraße, Berlin, Germany",
+    phone: "+4917643304907",
+    email: "ahsan.nazir@collaborativesglobal.com",
+    address: "Bad homburg, Germany",
     position: [52.52, 13.405],
   },
   {
-    country: "Manchester, UK",
-    phone: "+44090078601",
-    email: "uk@example.com",
-    address: "1213 High Street, London, UK",
+    country: "London, UK",
+    phone: "+447828315225",
+    email: "info@collaborativesglobal.com",
+    address: "London, UK",
     position: [53.4808, -2.2426],
   },
   {
-    country: "Colorado, USA",
-    phone: "+12090078601",
-    email: "usa@example.com",
-    address: "1415 Elm Street, New York, NY, USA",
-    position: [39.5501, -105.7821],
+    country: "California, USA",
+    phone: "+249115457754",
+    email: "info@collaborativesglobal.com",
+    address: "California, USA",
+    position: [37.7749, -122.4194],
   },
   {
-    country: "Toronto, Canada",
-    phone: "+14090078601",
-    email: "canada@example.com",
-    address: "1617 George Street, Toronto, Canada",
-    position: [43.6532, -79.3832],
-  },
-  {
-    country: "Sydney, Australia",
-    phone: "+61090078601",
-    email: "australia@example.com",
-    address: "1617 George Street, Sydney, Australia",
-    position: [-33.8688, 151.2093],
+    country: "Manama, Bahrain",
+    phone: "+973f36060632",
+    email: "info@collaborativesglobal.com",
+    address: "Manama, Bahrain",
+    position: [26.2285, 50.5860],
   },
 ];
 
 const ContactUs = () => {
   return (
-    <div className="flex flex-col gap-12">
+    <div className="flex flex-col">
       <PageTitle
         title="Get in Touch"
-        description="We would love to hear from you. Please reach out to us through any of
-          the following offices."
+        description="We would love to hear from you. Please reach out to us through any of the following offices."
         bgImg="bg-contact"
-        bgPosition="60% 40%"
+        bgPosition="center"
       />
       
-      <div className="p-4 md:px-8 flex flex-col gap-4">
-      <ContactUsForm />
-      <div className="flex flex-col gap-4">
-        <h3 className="text-2xl font-bold">Our Offices</h3>
-        <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-3">
-          {offices.map((office, index) => (
-            <Office key={index} office={office} />
-          ))}
+      <div className="container mx-auto px-4 md:px-8 lg:px-12 py-20 flex flex-col gap-20">
+        <ContactUsForm />
+        
+        <div className="flex flex-col gap-8">
+          <div className="text-center max-w-3xl mx-auto space-y-4">
+            <h2 className="text-3xl md:text-4xl font-display font-bold text-primary">
+              Our Global Presence
+            </h2>
+            <p className="text-lg text-gray-600">
+              Visit us at one of our offices around the world.
+            </p>
+          </div>
+          
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {offices.map((office, index) => (
+              <Office key={index} office={office} />
+            ))}
+          </div>
+        </div>
+
+        <div className="rounded-2xl overflow-hidden shadow-xl border border-gray-100">
+          <WorldMap office={offices} />
         </div>
       </div>
-      <WorldMap office={offices} />
     </div>
-      </div>
   );
 };
 

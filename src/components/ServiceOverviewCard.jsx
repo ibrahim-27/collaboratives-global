@@ -3,23 +3,25 @@ import { FaArrowRight } from "react-icons/fa";
 
 const ServiceOverviewCard = ({ title, icon }) => {
     return (
-        <div className="w-80 h-80 mx-auto border rounded-lg shadow-md flex flex-col gap-4 justify-center items-center p-6 
-            hover:shadow-primary transition-all duration-300 
-            hover:-translate-y-2 hover:scale-[1.02]">
-            <div className="w-24 h-24">
-                <img src={icon} alt={title} className="object-contain" />
+        <div className="group h-full bg-white border border-gray-100 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 p-8 flex flex-col items-center text-center hover:-translate-y-2">
+            <div className="w-20 h-20 mb-6 p-4 bg-surface rounded-full group-hover:bg-secondary/10 transition-colors">
+                <img src={icon} alt={title} className="w-full h-full object-contain" />
             </div>
-            <div className="flex flex-col gap-2 items-center">
-                <h3 className="text-xl font-bold text-center">{title}</h3>
+            
+            <h3 className="text-xl font-display font-bold text-primary mb-4 group-hover:text-secondary transition-colors">
+                {title}
+            </h3>
+            
+            <div className="mt-auto pt-4">
+                <Link 
+                    to={`/services#${title.toLowerCase().replace(/\s+/g, "-")}`}
+                    className="inline-flex items-center gap-2 text-secondary font-semibold hover:text-primary transition-colors group-hover:gap-3"
+                >
+                    Learn More <FaArrowRight size={14} />
+                </Link>
             </div>
-            <Link 
-                to={`/services#${title.toLowerCase().replace(/\s+/g, "-")}`}
-                className="w-36 bg-secondary text-white text-center py-2 px-4 rounded-lg hover:bg-primary flex items-center justify-center gap-2 transition-all duration-300"
-            >
-                Learn More <FaArrowRight />
-            </Link>
         </div>
     );
-}
+};
 
 export default ServiceOverviewCard;

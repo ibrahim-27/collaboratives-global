@@ -1,20 +1,34 @@
 import { FaArrowRight } from "react-icons/fa"
 
 const CareersCard = ({index, img, title, description, buttonText}) => {
+    const isEven = index % 2 === 1;
+    
     return (
-        <div className={`grid md:grid-cols-2 gap-4 py-4 ${index%2==1?"bg-gray-200":''}`}>
-            <img className={`mx-auto h-[20rem] md:h-[24rem] lg:h-[32rem] ${index%2==1?"md:order-2":''}`} src={img} alt="" />
-            <div className="flex flex-col items-center justify-center px-4 gap-6 text-lg">
-                <h1 className="text-2xl font-bold">{title}</h1>
-                <p className="text-text-secondary">
-                    {description}
-                </p>
-                <button className="w-fit bg-secondary text-white px-4 py-2 rounded-lg hover:bg-primary flex items-center justify-center gap-2 transition-all duration-300">
-                    {buttonText} <FaArrowRight />
-                </button>
+        <div className={`py-16 ${isEven ? "bg-gray-50" : "bg-white"}`}>
+            <div className="container mx-auto px-4 md:px-8 lg:px-12">
+                <div className="grid md:grid-cols-2 gap-12 items-center">
+                    <div className={`rounded-2xl overflow-hidden shadow-lg ${isEven ? "md:order-2" : ""}`}>
+                        <img 
+                            className="w-full h-[300px] md:h-[400px] object-cover hover:scale-105 transition-transform duration-700" 
+                            src={img} 
+                            alt={title} 
+                        />
+                    </div>
+                    <div className="flex flex-col gap-6">
+                        <h2 className="text-3xl md:text-4xl font-display font-bold text-primary">
+                            {title}
+                        </h2>
+                        <p className="text-lg text-gray-600 leading-relaxed">
+                            {description}
+                        </p>
+                        <button className="w-fit bg-secondary text-white px-8 py-3 rounded-full font-semibold hover:bg-primary flex items-center gap-2 transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1">
+                            {buttonText} <FaArrowRight />
+                        </button>
+                    </div>
+                </div>
             </div>
         </div>
     )
 }
 
-export default CareersCard 
+export default CareersCard

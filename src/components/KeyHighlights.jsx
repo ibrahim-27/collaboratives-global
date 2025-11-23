@@ -1,5 +1,5 @@
 import HighlightCard from "./HighlightCard";
-import img from "../assets/hero-bg.jpg";
+import img from "../assets/hero-bg.webp";
 
 const highlights = [
     {
@@ -20,16 +20,25 @@ const highlights = [
   ];
 
 const KeyHighLights = () => {
-
     return (
-        <div className="px-4 w-full mx-auto my-10 flex flex-col gap-4">
-        <h1 className="text-2xl font-bold ">Why Collaboratives Global?</h1>
-        <div className="grid gap-4 sm:grid-cols-3">
-            {highlights.map((highlight, index) => (
-                <HighlightCard key={index} title={highlight.title} desc={highlight.desc} icon={highlight.icon} />
-            ))}
-        </div>
-        </div>
+        <section className="py-20 bg-gray-50">
+            <div className="container mx-auto px-4 md:px-8 lg:px-12 flex flex-col gap-12">
+                <div className="text-center max-w-3xl mx-auto space-y-4">
+                    <h2 className="text-3xl md:text-4xl font-display font-bold text-primary">
+                        Why Collaboratives Global?
+                    </h2>
+                    <p className="text-lg text-gray-600">
+                        We deliver excellence through our proven expertise, collaborative approach, and track record of success.
+                    </p>
+                </div>
+                
+                <div className="grid gap-8 md:grid-cols-3">
+                    {highlights.map((highlight, index) => (
+                        <HighlightCard key={index} title={highlight.title} desc={highlight.desc} icon={highlight.icon} />
+                    ))}
+                </div>
+            </div>
+        </section>
     );
 }
 

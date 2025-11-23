@@ -31,14 +31,14 @@ const cards = [
 
 const Careers = () => {
   return (
-    <div>
+    <div className="flex flex-col">
       <PageTitle
         title="Join Our Team"
         description="Explore career opportunities and become a part of our dynamic team."
         bgImg="bg-careers"
-        bgPosition="60% 40%"
+        bgPosition="center"
       />
-      <div className="flex flex-col gap-4">
+      <div className="flex flex-col">
         {cards.map((card, index) => (
           <CareersCard
             key={index}

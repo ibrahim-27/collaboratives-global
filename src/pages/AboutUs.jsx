@@ -25,40 +25,32 @@ const keypoints = [
 
 const AboutUs = () => {
   return (
-    <>
+    <div className="flex flex-col">
       <PageTitle
         title="About Us"
-        description="Collaboratives Global (formerly Collaborative
-          Consultings – established 2014) a financial management consultancy
-          firm that specializes in
-            Financial – Operational and IT governance consultancy services
-          . For a decade or so, <strong>Collaboratives Global</strong>, is
-          striving with its “client-integrated” professional services in the
-          domains of
-            Financial Management, Accounting & Reporting, Risk Advisory,
-            Assurance and Information Technology
-          . At Collaboratives Global, Transformation is
-          accomplished through Professional and Practical consulting solutions.
-          Collaboratives Global – we’re not just subject
-          specialist, we’re more than your consultants, we’re your
-          Transformation Partners!"
-          bgImg="bg-about"
-          bgPosition="80% 20%"
+        description="Collaboratives Global (formerly Collaborative Consultings – established 2014) a financial management consultancy firm that specializes in Financial – Operational and IT governance consultancy services."
+        bgImg="bg-about"
+        bgPosition="center"
       />
-      <div className="my-8 px-8">
-      <div className="grid md:grid-cols-3 gap-4 items-center justify-center">
-        {keypoints.map((keypoint, index) => (
-          <AboutUsCard
-            key={index}
-            title={keypoint.title}
-            description={keypoint.description}
-          />
-        ))}
-      </div>
+      
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-4 md:px-8 lg:px-12">
+          <div className="grid md:grid-cols-3 gap-8 items-stretch justify-center">
+            {keypoints.map((keypoint, index) => (
+              <AboutUsCard
+                key={index}
+                title={keypoint.title}
+                description={keypoint.description}
+              />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <ApproachSection />
       <Team />
       <Projects />
-      </div>
-    </>
+    </div>
   );
 };
 

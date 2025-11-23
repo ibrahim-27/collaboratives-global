@@ -11,66 +11,16 @@ import servierLogo from "../assets/servier-logo.png";
 import raviLogo from "../assets/ravi-logo.png";
 
 const projects = [
-  {
-    title: "DWP Group",
-    description:
-      "DWP Group is a leading provider of products, service and solutions in the field of Consumer Electronics & Technology.",
-    img: dwpLogo,
-  },
-  {
-    title: "Jotun",
-    description:
-      "Jotun is one of the world's leading manufacturers of decorative paints, marine, protective and powder coatings.",
-    img: jotunLogo,
-  },
-  {
-    title: "Yum",
-    description:
-      "Yum! Brands is focused on building KFC, Pizza Hut, Taco Bell and The Habit Burger Grill to be the world's most loved, trusted and fastest growing restaurant brands.",
-    img: yumLogo,
-  },
-  {
-    title: "Gloves & Gloves",
-    description:
-      "Gloves & Gloves is a leading manufacturer of high-quality gloves for a variety of industries.",
-    img: gngLogo,
-  },
-  {
-    title: "Techlogix",
-    description:
-      "Techlogix is a global leader in software development, mobile applications, and IT consulting.",
-    img: techlogixLogo,
-  },
-  {
-    title: "TallyMarks Consulting",
-    description:
-      "TallyMarks Consulting is a leading provider of business intelligence and data analytics solutions.",
-    img: tallymarksLogo,
-  },
-  {
-    title: "Professional Academy of Commerce",
-    description:
-      "Professional Academy of Commerce is a leading provider of professional accounting and finance education.",
-    img: pacLogo,
-  },
-  {
-    title: "AL-Raheem Garden",
-    description:
-      "AL-Raheem Garden is a leading provider of residential and commercial real estate solutions.",
-    img: alraheemLogo,
-  },
-  {
-    title: "Servier Pharmaceuticals",
-    description:
-      "Servier Pharmaceuticals is a leading provider of pharmaceutical products.",
-    img: servierLogo,
-  },
-  {
-    title: "Ravi Spinnings",
-    description:
-      "Ravi Spinnings is a leading provider of textiles and fabrics.",
-    img: raviLogo,
-  },
+  { title: "DWP Group", img: dwpLogo },
+  { title: "Jotun", img: jotunLogo },
+  { title: "Yum", img: yumLogo },
+  { title: "Gloves & Gloves", img: gngLogo },
+  { title: "Techlogix", img: techlogixLogo },
+  { title: "TallyMarks Consulting", img: tallymarksLogo },
+  { title: "Professional Academy of Commerce", img: pacLogo },
+  { title: "AL-Raheem Garden", img: alraheemLogo },
+  { title: "Servier Pharmaceuticals", img: servierLogo },
+  { title: "Ravi Spinnings", img: raviLogo },
 ];
 
 const Projects = () => {
@@ -79,39 +29,50 @@ const Projects = () => {
 
   useEffect(() => {
     const scrollContainer = scrollRef.current;
+    let animationFrameId;
 
     const scroll = () => {
       if (scrollContainer && !isPaused) {
         if (scrollContainer.scrollLeft >= scrollContainer.scrollWidth / 2) {
-          scrollContainer.scrollLeft = 0; // Reset to start for seamless loop
+          scrollContainer.scrollLeft = 0;
         }
-        scrollContainer.scrollLeft += 1; // Increment scrollLeft to move right
+        scrollContainer.scrollLeft += 1;
       }
+      animationFrameId = requestAnimationFrame(scroll);
     };
 
-    const interval = setInterval(scroll, 20); // Adjust speed
+    animationFrameId = requestAnimationFrame(scroll);
 
-    return () => clearInterval(interval);
+    return () => cancelAnimationFrame(animationFrameId);
   }, [isPaused]);
 
   return (
-    <div className="flex flex-col gap-6">
-      <h1 className="text-3xl font-bold text-center">Our Clients</h1>
+    <section className="py-16 bg-white border-t border-gray-100">
+      <div className="container mx-auto px-4 mb-10 text-center">
+        <h2 className="text-2xl md:text-3xl font-display font-bold text-gray-400 uppercase tracking-widest">
+          Trusted by Industry Leaders
+        </h2>
+      </div>
+      
       <div 
         ref={scrollRef} 
-        className="overflow-x-hidden whitespace-nowrap py-4"
+        className="overflow-x-hidden whitespace-nowrap py-8"
         onMouseEnter={() => setIsPaused(true)}
         onMouseLeave={() => setIsPaused(false)}
       >
-        <div className="inline-flex gap-12">
+        <div className="inline-flex items-center gap-16 md:gap-24 px-4">
           {[...projects, ...projects].map((project, index) => (
-            <div key={index} className="flex-shrink-0">
-              <img className="w-fit h-32" src={project.img} alt={project.title} />
+            <div key={index} className="flex-shrink-0 group">
+              <img 
+                className="h-16 md:h-20 w-auto object-contain grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500 filter" 
+                src={project.img} 
+                alt={project.title} 
+              />
             </div>
           ))}
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

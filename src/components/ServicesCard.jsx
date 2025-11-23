@@ -13,72 +13,68 @@ const ServicesCard = ({ index, title, description, icon, subServices }) => {
     <div
       ref={ref}
       id={title.toLowerCase().replace(/\s+/g, "-")}
-      className={`h-fit w-full grid grid-cols-1 gap-y-8 md:grid-cols-3 md:gap-x-8 py-8 px-4 md:px-8 ${
-        isEven ? "bg-primary" : "bg-white"
-      } 
-      ${inView ? "animate-fade-scale-in" : "opacity-0"}`}
+      className={`py-20 ${
+        isEven ? "bg-primary text-white" : "bg-white text-gray-800"
+      } transition-opacity duration-700 ${inView ? "opacity-100" : "opacity-0"}`}
     >
-      <div
-        className={`h-full w-full flex justify-center items-center m-auto ${
-          index % 2 === 1 ? "md:order-2" : ""
-        }`}
-      >
-        <img className="h-full w-full object-cover" src={icon} alt={title} />
-      </div>
-      <div
-        className={`col-span-2 flex flex-col justify-center ${
-          isEven ? "text-gray-300" : "text-gray-700"
-        }`}
-      >
-        <h3
-          className={`text-3xl font-bold mb-4 ${
-            isEven ? "text-white" : "text-gray-800"
-          }`}
-        >
-          {title}
-        </h3>
-        <p className="text-lg mb-6">{description}</p>
-        {subServices.length ? (
-          <div>
-            <h4 className="text-2xl font-semibold mb-4">
-              Our Services:
-            </h4>
-            <ul className="list-none list-inside  grid grid-cols-1 md:grid-cols-2  gap-3">
-              {subServices.map((subService, index) => (
-                <li
-                  key={index}
-                  className={`py-3 px-4 rounded-lg flex flex-col items-center md:flex-row gap-4 ${
-                    isEven ? "text-white bg-gray-400 bg-opacity-50" : "text-gray-700 bg-gray-100 bg-opacity-50"
-                  }`}
-                >
-                  <div
-                    className={`${
-                      isEven ? "bg-secondary" : "bg-secondary/10"
-                    } rounded-full p-3 w-fit h-fit hidden md:block`}
-                  >
-                    <subService.icon
-                      className={`w-6 h-6 ${
-                        isEven ? "text-white" : "text-secondary"
-                      }`}
-                    />
-                  </div>
-                  <div className="px-4 w-full">
-                    <h5 className="text-xl font-medium italic">
-                      {subService.title}
-                    </h5>
-                    <ul className={`list-disc list-inside mt-2 ${isEven ? "text-gray-300" : "text-gray-400"}`}>
-                      {subService.description.map((item, idx) => (
-                        <li key={idx} className="text-sm">{item}</li>
-                      ))}
-                    </ul>
-                  </div>
-                </li>
-              ))}
-            </ul>
+      <div className="container mx-auto px-4 md:px-8 lg:px-12">
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
+          {/* Image Section */}
+          <div className={`h-[400px] rounded-2xl overflow-hidden shadow-xl ${isEven ? "lg:order-2" : ""}`}>
+            <img 
+              className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" 
+              src={icon} 
+              alt={title} 
+            />
           </div>
-        ) : (
-          ""
-        )}
+
+          {/* Content Section */}
+          <div className="flex flex-col gap-6">
+            <h3 className="text-3xl md:text-4xl font-display font-bold">
+              {title}
+            </h3>
+            <p className={`text-lg leading-relaxed ${isEven ? "text-gray-200" : "text-gray-600"}`}>
+              {description}
+            </p>
+
+            {subServices.length > 0 && (
+              <div className="mt-8">
+                <h4 className="text-xl font-bold mb-6 border-b border-current pb-2 inline-block">
+                  Key Services
+                </h4>
+                <div className="grid sm:grid-cols-2 gap-6">
+                  {subServices.map((subService, idx) => (
+                    <div 
+                      key={idx}
+                      className={`p-4 rounded-xl transition-all duration-300 hover:-translate-y-1 ${
+                        isEven 
+                          ? "bg-white/10 hover:bg-white/20" 
+                          : "bg-gray-50 hover:bg-white hover:shadow-lg border border-gray-100"
+                      }`}
+                    >
+                      <div className="flex items-start gap-4">
+                        <div className={`p-2 rounded-lg ${isEven ? "bg-secondary text-white" : "bg-secondary/10 text-secondary"}`}>
+                          <subService.icon className="w-5 h-5" />
+                        </div>
+                        <div>
+                          <h5 className="font-bold mb-2">{subService.title}</h5>
+                          <ul className={`space-y-1 text-sm ${isEven ? "text-gray-300" : "text-gray-500"}`}>
+                            {subService.description.map((item, i) => (
+                              <li key={i} className="flex items-center gap-2">
+                                <span className="w-1 h-1 rounded-full bg-current opacity-50"></span>
+                                {item}
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+          </div>
+        </div>
       </div>
     </div>
   );
