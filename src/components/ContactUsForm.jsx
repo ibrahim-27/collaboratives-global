@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import emailjs from '@emailjs/browser';
 
 const ContactUsForm = () => {
     const [formData, setFormData] = useState({
@@ -16,16 +17,25 @@ const ContactUsForm = () => {
         });
     };
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        console.log('Form submitted:', formData);
-        setFormData({
-            name: '',
-            email: '',
-            message: '',
-            phone: ''
+const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    try {
+        await emailjs.sendForm('service_ybqak5f', 'template_7mwirri', e.target, {
+            publicKey: 'TWBGK-2PM2qGwHZts'
         });
-    };
+    } catch (error) {
+        console.log(error);
+    }
+
+    setFormData({
+        name: '',
+        email: '',
+        message: '',
+        phone: ''
+    });
+};
+
 
     return (
         <section className="py-20 bg-white">

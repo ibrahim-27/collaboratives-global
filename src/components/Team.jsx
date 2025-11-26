@@ -21,7 +21,7 @@ const teamMembers = [
   {
     name: "Ahsan Nazir Sheikh",
     title: "Co-Founder and Co-CEO, Collaboratives GLOBAL, Germany",
-    tagline: "Expert in Android Development, IT Governance & High-Performance Digital Solutions.",
+    tagline: "Expert in Strategic Leadership, IT Governance & High-Performance Digital Solutions.",
     bio: [
       "A dynamic strategist with a proven record of steering innovation, Ahsan Sheikh excels at bridging the gap between bold vision and operational impact. Skilled in aligning technology, market insights, and organisational design, he has led high-stakes initiatives across diverse sectors, driving growth, efficiency, and transformation.",
       "Ahsan’s approach combines strong analytical rigor with creative thinking—enabling leadership teams to navigate ambiguity, seize disruption, and articulate actionable roadmaps. Whether it’s digital transformation, new business model incubation, or change-management programs, he brings clarity, purpose, and momentum.",
