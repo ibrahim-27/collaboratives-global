@@ -99,9 +99,9 @@ const Navbar = () => {
             Contact Us
           </Link>
           
-          <button className="bg-secondary hover:bg-secondary-light text-white px-6 py-2.5 rounded-full font-semibold transition-all shadow-md hover:shadow-lg transform hover:-translate-y-0.5">
+          <Link to="/contact-us" className="bg-secondary hover:bg-secondary-light text-white px-6 py-2.5 rounded-full font-semibold transition-all shadow-md hover:shadow-lg transform hover:-translate-y-0.5">
             Get Consultancy
-          </button>
+          </Link>
         </div>
 
         {/* Mobile Navigation Overlay */}
@@ -131,9 +131,9 @@ const Navbar = () => {
             <Link to="/industries" className="text-lg font-medium hover:text-secondary">Industries</Link>
             <Link to="/careers" className="text-lg font-medium hover:text-secondary">Careers</Link>
             <Link to="/contact-us" className="text-lg font-medium hover:text-secondary">Contact Us</Link>
-            <button className="bg-secondary text-white px-6 py-3 rounded-lg font-semibold mt-2">
+            <Link to="/contact-us" className="bg-secondary text-white px-6 py-3 rounded-lg font-semibold mt-2">
               Get Consultancy
-            </button>
+            </Link>
           </div>
         )}
       </div>

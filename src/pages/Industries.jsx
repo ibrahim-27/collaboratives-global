@@ -8,6 +8,7 @@ import ngo from "../assets/ngo.png";
 import restuarant from "../assets/restuarant.png";
 import financial from "../assets/financial.png";
 import PageTitle from "../components/PageTitle";
+import industriesBanner from "../assets/industries-banner.jpg";
 
 const industries = [
   {
@@ -72,7 +73,7 @@ const Industries = () => {
       <PageTitle
         title="Collaboratives' Domains"
         description="Collaboratives Global offers tailored services across various industries, helping businesses grow and thrive."
-        bgImg="bg-primary"
+        bgImg={industriesBanner}
       />
       
       <section className="py-20 bg-gray-50">

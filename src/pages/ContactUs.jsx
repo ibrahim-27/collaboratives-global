@@ -1,6 +1,7 @@
 import ContactUsForm from "../components/ContactUsForm";
 import Office from "../components/Office";
 import PageTitle from "../components/PageTitle";
+import contactBanner from "../assets/contact-banner.jpg";
 import WorldMap from "../components/WorldMap";
 
 const offices = [
@@ -54,7 +55,7 @@ const ContactUs = () => {
       <PageTitle
         title="Get in Touch"
         description="We would love to hear from you. Please reach out to us through any of the following offices."
-        bgImg="bg-contact"
+        bgImg={contactBanner}
         bgPosition="center"
       />
       

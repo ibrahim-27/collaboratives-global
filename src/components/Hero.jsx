@@ -1,6 +1,11 @@
 import { FaArrowRight, FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
+import heroBanner1 from "../assets/hero-banner-1.jpg";
+import heroBanner2 from "../assets/hero-banner-2.jpg";
+import heroBanner3 from "../assets/hero-banner-3.jpg";
+import heroBanner4 from "../assets/hero-banner-4.jpg";
+import heroBanner5 from "../assets/hero-banner-5.jpg";
 
 const Hero = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -8,7 +13,7 @@ const Hero = () => {
   
   const banners = [
     {
-      image: 'bg-hero1',
+      image: heroBanner1,
       title: 'Collaboratives Global',
       subtitle: 'Excellence in Financial Management',
       description: 'Specializing in Financial Management, Risk Advisory, IT Governance, and more for over a decade.',
@@ -16,7 +21,7 @@ const Hero = () => {
       link: '/contact-us'
     },
     {
-      image: 'bg-hero2',
+      image: heroBanner2,
       title: 'Virtual CFO Services',
       subtitle: 'Strategic Financial Leadership',
       description: 'Equivalent dedicated professional services with substantial HR cost saving. Guaranteed cost reduction of PKR 6M annually.',
@@ -24,15 +29,15 @@ const Hero = () => {
       link: '/services'
     },
     {
-      image: 'bg-hero3',
+      image: heroBanner3,
       title: 'ERP Consultancy',
       subtitle: 'Digital Transformation',
-      description: 'Professional and Practical Financial Functional Consultancy. Ensuring your customized ERP Project’s success.',
+      description: 'Professional and Practical Financial Functional Consultancy. Ensuring your customized ERP Project\'s success.',
       buttonText: 'Explore ERP',
       link: '/services'
     },
     {
-      image: 'bg-hero4',
+      image: heroBanner4,
       title: 'Business Process Management',
       subtitle: 'Optimization & Efficiency',
       description: 'BPM is the NEXT LEVEL BPR. Effectual Business Process Management with Cost, HR and Integration.',
@@ -40,7 +45,7 @@ const Hero = () => {
       link: '/services'
     },
     {
-      image: 'bg-hero5',
+      image: heroBanner5,
       title: 'Assurance & Risk Advisory',
       subtitle: 'Secure Your Future',
       description: 'Strengthen your business resilience with comprehensive assurance and risk advisory services.',
@@ -97,7 +102,8 @@ const Hero = () => {
       <div
         className={`absolute inset-0 bg-cover bg-center transition-all duration-700 ease-in-out transform ${
           transitioning ? 'scale-105 opacity-80' : 'scale-100 opacity-100'
-        } ${banners[currentImageIndex].image}`}
+        }`}
+        style={{ backgroundImage: `url(${banners[currentImageIndex].image})` }}
       >
         <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-transparent"></div>
       </div>

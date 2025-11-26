@@ -28,10 +28,6 @@ export default {
         hero4: "url('/src/assets/hero4.jpg')",
         hero5: "url('/src/assets/hero5.jpg')",
         hero: "url('/src/assets/hero-bg.webp')",
-        services: "url('/src/assets/services-bg.webp')",
-        about: "url('/src/assets/aboutus-bg.png')",
-        contact: "url('/src/assets/contactus-bg.jpg')",
-        careers: "url('/src/assets/careers-bg.jpeg')",
       },
       keyframes: {
         "fade-scale-in": {

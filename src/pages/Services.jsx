@@ -1,11 +1,17 @@
 import React, { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import ServicesCard from "../components/ServicesCard";
-
-import complianceBanner from "../assets/compliance-banner.png";
-import riskBanner from "../assets/risk-banner.jpg";
-import itBanner from "../assets/it-banner.png";
 import PageTitle from "../components/PageTitle";
+import servicesBanner from "../assets/services-banner.jpg";
+import financialManagementImg from "../assets/service-financial-management.jpg";
+import assuranceImg from "../assets/service-assurance.jpg";
+import riskAdvisoryImg from "../assets/service-risk-advisory.jpg";
+import standardizationImg from "../assets/service-standardization.jpg";
+import financialOperationalImg from "../assets/service-financial-operational.jpg";
+import erpImg from "../assets/service-erp.jpg";
+import taxationImg from "../assets/service-taxation.jpg";
+import itImg from "../assets/service-it.jpg";
+import governanceImg from "../assets/service-governance.jpg";
 
 import {
   FaChartLine,
@@ -39,7 +45,7 @@ const services = [
   {
     title: "Financial Management",
     description: "Offering comprehensive financial solutions to optimize business performance.",
-    icon: complianceBanner,
+    icon: financialManagementImg,
     subServices: [
       {
         title: "Virtual CFO Services",
@@ -66,7 +72,7 @@ const services = [
   {
     title: "Assurance and Compliance",
     description: "Ensuring compliance and accountability through reliable audits and due diligence.",
-    icon: complianceBanner,
+    icon: assuranceImg,
     subServices: [
       {
         title: "External Audit",
@@ -103,7 +109,7 @@ const services = [
   {
     title: "Risk Advisory",
     description: "Helping businesses identify and mitigate risks effectively.",
-    icon: riskBanner,
+    icon: riskAdvisoryImg,
     subServices: [
       {
         title: "Internal Audit",
@@ -140,7 +146,7 @@ const services = [
   {
     title: "Standardization and Optimization",
     description: "Streamlining processes and optimizing business operations.",
-    icon: complianceBanner,
+    icon: standardizationImg,
     subServices: [
       {
         title: "Standard Operating Procedures",
@@ -187,7 +193,7 @@ const services = [
   {
     title: "Financial-Operational Management",
     description: "Improving financial and operational performance for business success.",
-    icon: complianceBanner,
+    icon: financialOperationalImg,
     subServices: [
       {
         title: "Supply Chain Management",
@@ -234,7 +240,7 @@ const services = [
   {
     title: "Enterprise Resource Planning",
     description: "Comprehensive ERP solutions tailored to business needs.",
-    icon: riskBanner,
+    icon: erpImg,
     subServices: [
       {
         title: "Financial Functional Consultancy",
@@ -271,7 +277,7 @@ const services = [
   {
     title: "Taxation",
     description: "Expert taxation services to ensure compliance and optimize your tax strategy.",
-    icon: complianceBanner,
+    icon: taxationImg,
     subServices: [
       {
         title: "VAT",
@@ -298,7 +304,7 @@ const services = [
   {
     title: "Information Technology",
     description: "Driving innovation through expert IT services and governance.",
-    icon: itBanner,
+    icon: itImg,
     subServices: [
       {
         title: "IT Audits",
@@ -325,7 +331,7 @@ const services = [
   {
     title: "Corporate Governance",
     description: "Implementing governance frameworks for ethical and effective management.",
-    icon: riskBanner,
+    icon: governanceImg,
     subServices: [
       {
         title: "Corporate Governance",
@@ -373,7 +379,7 @@ const Services = () => {
       <PageTitle
         title="Our Services"
         description="We provide a wide range of services to help you with your business needs. Our services include financial accounting & reporting, financial management, virtual CFO services, optimization and standardization, financial functional services, and IT governance."
-        bgImg="bg-services"
+        bgImg={servicesBanner}
       />
       <div className="flex flex-col">
         {services.map((service, index) => (

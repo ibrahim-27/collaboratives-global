@@ -1,21 +1,24 @@
 import HighlightCard from "./HighlightCard";
-import img from "../assets/hero-bg.webp";
+import proficienciesImg from "../assets/proficiencies.jpg";
+
+import collaborationImg from "../assets/collaboration.jpg";
+import accomplishmentsImg from "../assets/accomplishments.jpg";
 
 const highlights = [
     {
       title: "Our Proficiencies",
       desc: "Our professional services domain spans from Financial Accounting & Reporting and Financial Management to Virtual CFO services – Financial-operational Management to Optimization and Standardization – Financial Functional services to IT Governance.",
-      icon: img
+      icon: proficienciesImg
     },
     {
       title: "Our Collaboration",
       desc: "Thoroughly integrated and integrally collaborated 'business-centric' approach for customized solutions through 'industry best practices'.",
-      icon: img
+      icon: collaborationImg
     },
     {
       title: "Our Accomplishments",
       desc: "Provenly 'advised, devised and implemented' accomplishments in Pakistan, UAE, and USA.",
-      icon: img
+      icon: accomplishmentsImg
     }
   ];
 

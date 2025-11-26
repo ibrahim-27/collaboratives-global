@@ -1,5 +1,6 @@
 import React from "react";
 import PageTitle from "../components/PageTitle";
+import aboutBanner from "../assets/about-banner.jpg";
 import Team from "../components/Team";
 import Projects from "../components/Projects";
 import AboutUsCard from "../components/AboutUsCard";
@@ -29,7 +30,7 @@ const AboutUs = () => {
       <PageTitle
         title="About Us"
         description="Collaboratives Global (formerly Collaborative Consultings – established 2014) a financial management consultancy firm that specializes in Financial – Operational and IT governance consultancy services."
-        bgImg="bg-about"
+        bgImg={aboutBanner}
         bgPosition="center"
       />
       

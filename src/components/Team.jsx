@@ -7,8 +7,8 @@ import athar from "../assets/athar-img.jpg"
 
 const teamMembers = [
   {
-    name: "Asim Nazir Sheikh, FCA",
-    title: "Founder & CEO – Collaboratives Global FZ-E",
+    name: "Asim Nazir Sheikh",
+    title: "Founder & CEO – Collaboratives GLOBAL",
     tagline: "Driving Financial Clarity Through Bespoke ERP, Integration & Operational Reinvention.",
     image: asim,
     bio: [
@@ -20,7 +20,7 @@ const teamMembers = [
   },
   {
     name: "Ahsan Nazir Sheikh",
-    title: "Co-Founder and Co-CEO, Collaboratives GLOBAL, Germany",
+    title: "Co-Founder and Co-CEO, Germany",
     tagline: "Expert in Strategic Leadership, IT Governance & High-Performance Digital Solutions.",
     bio: [
       "A dynamic strategist with a proven record of steering innovation, Ahsan Sheikh excels at bridging the gap between bold vision and operational impact. Skilled in aligning technology, market insights, and organisational design, he has led high-stakes initiatives across diverse sectors, driving growth, efficiency, and transformation.",
@@ -29,8 +29,8 @@ const teamMembers = [
     ]
   },
   {
-    name: "Awais Noori FCCA • ACA • ICAEW",
-    title: "Director, Awais & Co and Collaboratives GLOBAL, London",
+    name: "Awais Noori",
+    title: "Director, London",
     tagline: "Expert in UK–UAE Taxation, Compliance & High-Integrity Financial Advisory.",
     image: awais,
     bio: [
@@ -40,7 +40,7 @@ const teamMembers = [
     ]
   },
   {
-    name: "Tehseen Iqbal ACA",
+    name: "Tehseen Iqbal",
     title: "Director, Bahrain",
     tagline: "Driving Strategic Decisions Through FP&A, Taxation & Gulf-Market Expertise.",
     image: tehseen,
@@ -50,8 +50,8 @@ const teamMembers = [
     ]
   },
   {
-    name: "Athar Mahmood FCA",
-    title: "Director & Strategic Advisor, Collaboratives GLOBAL, KSA",
+    name: "Athar Mahmood",
+    title: "Director & Strategic Advisor, KSA",
     tagline: "Expert in Construction Finance, Strategic FP&A & Large-Scale Project Management.",
     image: athar,
     bio: [
