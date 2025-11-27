@@ -64,7 +64,7 @@ const Projects = () => {
           {[...projects, ...projects].map((project, index) => (
             <div key={index} className="flex-shrink-0 group">
               <img 
-                className="h-16 md:h-20 w-auto object-contain grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500 filter" 
+                className="h-16 md:h-20 w-auto object-contain transition-all duration-500 group-hover:scale-110" 
                 src={project.img} 
                 alt={project.title} 
               />
