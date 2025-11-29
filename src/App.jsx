@@ -3,7 +3,7 @@ import Home from './pages/Home'
 import AboutUs from './pages/AboutUs'
 import Services from './pages/Services'
 import ContactUs from './pages/ContactUs'
-import Industries from './pages/Industries'
+import Projects from './pages/Projects'
 import Careers from './pages/Careers'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
@@ -20,7 +20,7 @@ function App() {
         <Route path='/about-us' element={<AboutUs />} />
         <Route path='/services' element={<Services />} />
         <Route path='/contact-us' element={<ContactUs />} />
-        <Route path='/industries' element={<Industries />} />
+        <Route path='/projects' element={<Projects />} />
         <Route path='/careers' element={<Careers />} />
       </Routes>
       </div>

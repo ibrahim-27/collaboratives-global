@@ -43,8 +43,17 @@ const Navbar = () => {
       }`}
     >
       <div className="container mx-auto px-4 md:px-8 lg:px-12 flex justify-between items-center">
-        <Link to="/" className="text-2xl font-display font-bold tracking-tight">
-          COLLABORATIVES GLOBAL
+        <Link to="/" className="flex items-center gap-3 group">
+          <div className="w-10 h-10 rounded-lg overflow-hidden bg-white shadow-md group-hover:shadow-lg transition-all duration-300 group-hover:scale-105 flex-shrink-0">
+            <img 
+              src="/favicon.jpg" 
+              alt="Collaboratives Global Logo" 
+              className="w-full h-full object-cover"
+            />
+          </div>
+          <span className="text-xl md:text-2xl font-display font-bold tracking-tight group-hover:text-secondary transition-colors">
+            COLLABORATIVES GLOBAL
+          </span>
         </Link>
 
         {/* Mobile Menu Button */}
@@ -89,8 +98,8 @@ const Navbar = () => {
             )}
           </div>
 
-          <Link to="/industries" className="font-medium hover:text-secondary transition-colors">
-            Industries
+          <Link to="/projects" className="font-medium hover:text-secondary transition-colors">
+            Projects
           </Link>
           <Link to="/careers" className="font-medium hover:text-secondary transition-colors">
             Careers
@@ -128,7 +137,7 @@ const Navbar = () => {
                 ))}
               </div>
             )}
-            <Link to="/industries" className="text-lg font-medium hover:text-secondary">Industries</Link>
+            <Link to="/projects" className="text-lg font-medium hover:text-secondary">Projects</Link>
             <Link to="/careers" className="text-lg font-medium hover:text-secondary">Careers</Link>
             <Link to="/contact-us" className="text-lg font-medium hover:text-secondary">Contact Us</Link>
             <Link to="/contact-us" className="bg-secondary text-white px-6 py-3 rounded-lg font-semibold mt-2">
