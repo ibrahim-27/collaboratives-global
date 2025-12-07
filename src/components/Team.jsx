@@ -1,13 +1,14 @@
 import { useState } from "react";
-import { FaTimes, FaLinkedin, FaQuoteLeft, FaUser } from "react-icons/fa";
+import { FaTimes, FaQuoteLeft, FaUser } from "react-icons/fa";
 import asim from "../assets/asim-img.jpg";
 import awais from "../assets/awais-img.jpg";
 import tehseen from "../assets/tehseen-img.jpg";
 import athar from "../assets/athar-img.jpg"
+import farooq from "../assets/farooq-img.jpg";
 
 const teamMembers = [
   {
-    name: "Asim Nazir Sheikh",
+    name: "Asim Nazir Sheikh, FCA",
     title: "Founder & CEO – Collaboratives GLOBAL",
     tagline: "Driving Financial Clarity Through Bespoke ERP, Integration & Operational Reinvention.",
     image: asim,
@@ -19,7 +20,7 @@ const teamMembers = [
     ]
   },
   {
-    name: "Ahsan Nazir Sheikh",
+    name: "Ahsan Nazir Sheikh, MSCS",
     title: "Co-Founder and Co-CEO, Germany",
     tagline: "Expert in Strategic Leadership, IT Governance & High-Performance Digital Solutions.",
     bio: [
@@ -29,7 +30,18 @@ const teamMembers = [
     ]
   },
   {
-    name: "Awais Noori",
+    name: "Farooq Ahmad Siddiqui, CPA, CFC",
+    title: "Director, UAE",
+    tagline: "Over 20 Years of Finance Leadership in the UAE's Largest Manufacturing & Fortune 500 Organizations.",
+    image: farooq,
+    bio: [
+      "Farooq Ahmad Siddiqui, CPA, brings over two decades of distinguished finance leadership experience in the UAE, having served as Head of Finance for one of the largest manufacturing companies in the country. His extensive career includes holding key strategic roles within Fortune 500 organizations, where he has consistently demonstrated excellence in financial management, operational efficiency, and business transformation.",
+      "With deep expertise in financial planning and analysis, corporate governance, and strategic decision-making, Farooq has been instrumental in driving financial excellence across complex, multi-national operations. His proven track record in the UAE market, combined with his international experience, positions him as a trusted advisor for organizations seeking robust financial leadership and sustainable growth.",
+      "As Director at Collaboratives Global UAE, Farooq leverages his extensive network and market knowledge to deliver high-impact financial solutions, helping clients navigate the dynamic UAE business landscape with confidence and strategic clarity."
+    ]
+  },
+  {
+    name: "Awais Noori, FCCA, ACA (ICAEW)",
     title: "Director, London",
     tagline: "Expert in UK–UAE Taxation, Compliance & High-Integrity Financial Advisory.",
     image: awais,
@@ -40,7 +52,7 @@ const teamMembers = [
     ]
   },
   {
-    name: "Tehseen Iqbal",
+    name: "Tehseen Iqbal, FCA",
     title: "Director, Bahrain",
     tagline: "Driving Strategic Decisions Through FP&A, Taxation & Gulf-Market Expertise.",
     image: tehseen,
@@ -50,7 +62,7 @@ const teamMembers = [
     ]
   },
   {
-    name: "Athar Mahmood",
+    name: "Athar Mahmood, FCA",
     title: "Director & Strategic Advisor, KSA",
     tagline: "Expert in Construction Finance, Strategic FP&A & Large-Scale Project Management.",
     image: athar,
